@@ -33,12 +33,12 @@
                 <div class="card-body">
                 
                 @foreach ($Products as $product)
-  
+                <div class="row">
                 <div class="alert alert-dark" role="alert">
                         {{ $product->name}}    
-                <a href="{{ url('/delete').'/'.$product->id }}"class="stretched-link">Delete</a>
+                        <a href="#" class="stretched-link">Delete</a>
                 </div>
-    
+                </div>
 
                 @endforeach
                     

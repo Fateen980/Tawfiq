@@ -31,17 +31,17 @@
 
               <div class="container">
                 <div class="card-body">
-                
+                <div class="row">
                 @foreach ($Products as $product)
-  
+                <div class="col-sm">
                 <div class="alert alert-dark" role="alert">
-                        {{ $product->name}}    
-                <a href="{{ url('/delete').'/'.$product->id }}"class="stretched-link">Delete</a>
+                        {{ $product->name}}
+                        <a href="#" class="stretched-link">Delete</a>
                 </div>
-    
+                </div>
 
                 @endforeach
-                    
+                    </div>
                  </div>
                 </div>
             </div>

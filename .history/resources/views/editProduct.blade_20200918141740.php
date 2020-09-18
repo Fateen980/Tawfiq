@@ -18,10 +18,10 @@
       <li class="nav-item ">
         <a class="nav-link" href="{{ url('/addProduct') }}">Add Product </a>
       </li>
-      <li class="nav-item ">
+      <li class="nav-item active">
         <a class="nav-link " href="{{ url('/editProduct') }}">Edit Product <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link" href="{{ url('/deleteProduct') }}">Delete Product</a>
       </li>
     </ul>
@@ -29,20 +29,17 @@
 </nav>
 
 
-              <div class="container">
+
                 <div class="card-body">
-                
                 @foreach ($Products as $product)
   
                 <div class="alert alert-dark" role="alert">
                         {{ $product->name}}    
                 <a href="{{ url('/delete').'/'.$product->id }}"class="stretched-link">Delete</a>
                 </div>
-    
 
-                @endforeach
+
                     
-                 </div>
                 </div>
             </div>
         </div>

@@ -28,12 +28,6 @@ Auth::routes();
 
 Route::get('/addProduct', 'HomeController@create')->name('addProduct');
 
-
-Auth::routes();
-
-Route::post('/updateProduct', 'HomeController@update')->name('updateProduct');
-
-
 Auth::routes();
 Route::post('/addProduct', 'HomeController@store')->name('addProduct');
 
@@ -49,10 +43,6 @@ Auth::routes();
 
 Route::get('/delete/{id}', 'HomeController@delete')->name('delete');
 
-
-Auth::routes();
-
-Route::get('/edit/{id}', 'HomeController@edit')->name('edit');
 
 
 

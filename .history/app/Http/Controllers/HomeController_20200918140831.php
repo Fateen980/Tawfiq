@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 
 use App\Product;
 
-
 class HomeController extends Controller
 {
     /**
@@ -63,41 +62,11 @@ class HomeController extends Controller
     }
 
 
-
-    public function update()
-    {
-
-
-        $id                   = request('id');
-        $product              = Product::where('id',$id)->first();
-        $product->name        = request('productName');
-        $product->desc        = request('productDesc');
-        if(request()->file('image') !== null)
-        $product->path        = request()->file('image')->store('toPath', ['disk' => 'public']);
-
-        $product->save();
-       
-        $Products = Product::all();
-        return view('home', ['Products' => $Products]);
-
-    }
-
-
     public function editProduct(){
 
-        $Products = Product::all();
-        return view('editProduct', ['Products' => $Products]);
+        return view('editProduct');
 
     }
-
-
-
-    public function edit($id){
-
-        $Product = Product::where('id',$id)->first();
-        return view('edit', ['Product' => $Product]);
-
-    }   
 
     public function deleteProduct(){
 
@@ -111,7 +80,7 @@ class HomeController extends Controller
 
     public function delete($id) {
 
-        Product::where('id', $id)->firstorfail()->delete(); 
+        $user = Product::where('id', $id)->firstorfail()->delete(); 
 
         $Products = Product::all();
         return view('deleteProduct', ['Products' => $Products]);

@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 
 use App\Product;
 
-
 class HomeController extends Controller
 {
     /**
@@ -70,6 +69,8 @@ class HomeController extends Controller
 
         $id                   = request('id');
         $product              = Product::where('id',$id)->first();
+
+        echo $id = Auth::user()->id;
         $product->name        = request('productName');
         $product->desc        = request('productDesc');
         if(request()->file('image') !== null)
